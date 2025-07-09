@@ -8,7 +8,7 @@ const Home = () => {
 
   const onLogin = async () => {
     try {
-      await authorize();
+      await authorize({additionalParameters: { prompt: "login" }});
       let credentials = await getCredentials();
       Alert.alert('AccessToken: ' + credentials.accessToken);
     } catch (e) {
